@@ -1,0 +1,13 @@
+{
+  "name": "brokechef_backend",
+  "version": "1.0.0",
+  "description": "The backend of BrokeChef",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm start",
+    "start": "node server.js"
+  },
+  "author": "Jacob",
+  "license": "ISC"
+}

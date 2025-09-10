@@ -36,7 +36,7 @@ async function fetchSonoma(ingredients) {
                 {
                     role: "user",
                     content: `You are a recipe generator. 
-Given these ingredients: ${ingredients}, return a JSON array of possible recipes.
+Given these ingredients: ${ingredients}, return a JSON array of possible recipes. If ${ingredients} contains any forms of profanity, sensitivity, violence, and other obscene content, return a JSON message "invalid ingredients"
 
 The JSON should follow this structure (no extra text, no markdown, no escape sequences):
 

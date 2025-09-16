@@ -8,10 +8,21 @@ export async function findByIngredients(req, res) {
 
         const response = await fetch(url)
         const recipe = await response.json()
-        res.json(recipe)
+        const id = recipe[0]['id']
+        const finalRecipe = await searchById(id)
+        res.json(finalRecipe)
     }
     catch {
         res.status(500).json({ error: "Failed to fetch recipe, try again later" })
     }
 
+}
+
+async function searchById(id) {
+    const url = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${process.env.SPOONACULAR_KEY}`
+
+    const response = await fetch(url)
+    const recipe = await response.json()
+
+    return recipe
 }

@@ -36,39 +36,92 @@ async function fetchSonoma(ingredients) {
                 {
                     role: "user",
                     content: `You are a recipe generator. 
-Given these ingredients: ${ingredients}, return a JSON array of possible recipes. If ${ingredients} contains any forms of profanity, sensitivity, violence, and other obscene content, return a JSON message "invalid ingredients"
+Given these ingredients: ${ingredients}, return a single JSON object with one recipe. 
+If ${ingredients} contains any forms of profanity, sensitivity, violence, or other obscene content, 
+return a JSON message: { "error": "invalid ingredients" }
 
-The JSON should follow this structure (no extra text, no markdown, no escape sequences):
+The JSON must strictly follow this format (no extra text, no markdown, no escape sequences):
 
-[
-  {
-    "id": 12345,
-    "title": "Lemon Paprika Chicken",
-    "image": "https://spoonacular.com/recipeImages/12345-312x231.jpg",
-    "imageType": "jpg",
-    "usedIngredientCount": 3,
-    "missedIngredientCount": 2,
-    "missedIngredients": [
-      {
-        "id": 11215,
-        "amount": 2.0,
-        "unit": "tablespoons",
-        "unitLong": "tablespoons",
-        "unitShort": "Tbsp",
-        "aisle": "Spices and Seasonings",
-        "name": "olive oil",
-        "original": "2 tablespoons olive oil",
-        "originalName": "olive oil",
-        "meta": ["for cooking"],
-        "extendedName": "olive oil",
-        "image": "https://spoonacular.com/cdn/ingredients_100x100/olive-oil.jpg"
+{
+  "id": 663748,
+  "image": "https://img.spoonacular.com/recipes/663748-556x370.jpg",
+  "imageType": "jpg",
+  "title": "Traditional Apple Tart",
+  "readyInMinutes": 45,
+  "servings": 8,
+  "sourceUrl": "https://www.foodista.com/recipe/M23CKJZX/traditional-apple-tart",
+  "vegetarian": true,
+  "vegan": false,
+  "glutenFree": false,
+  "dairyFree": false,
+  "veryHealthy": false,
+  "cheap": false,
+  "veryPopular": false,
+  "sustainable": false,
+  "lowFodmap": false,
+  "weightWatcherSmartPoints": 13,
+  "gaps": "no",
+  "preparationMinutes": null,
+  "cookingMinutes": null,
+  "aggregateLikes": 1,
+  "healthScore": 2,
+  "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+  "license": "CC BY 3.0",
+  "sourceName": "Foodista",
+  "pricePerServing": 128.76,
+  "extendedIngredients": [
+    {
+      "id": 1089003,
+      "aisle": "Produce",
+      "image": "grannysmith-apple.png",
+      "consistency": "SOLID",
+      "name": "granny smiths",
+      "nameClean": "granny smiths",
+      "original": "1 1/2 pounds 3 cooking apples such as Bramley or Granny Smiths",
+      "originalName": "3 cooking apples such as Bramley or Granny Smiths",
+      "amount": 1.5,
+      "unit": "pounds",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.5,
+          "unitShort": "lb",
+          "unitLong": "pounds"
+        },
+        "metric": {
+          "amount": 680.389,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
       }
-    ],
-    "usedIngredients": [],
-    "unusedIngredients": [],
-    "likes": 456
-  }
-]`
+    },
+    ...
+  ],
+  "summary": "You can never have too many dessert recipes, so give Traditional Apple Tart a try. ...",
+  "cuisines": [],
+  "dishTypes": ["dessert"],
+  "diets": ["lacto ovo vegetarian"],
+  "occasions": [],
+  "instructions": "For the apple compote, heat the butter in a pan...",
+  "analyzedInstructions": [
+    {
+      "name": "",
+      "steps": [
+        {
+          "number": 1,
+          "step": "For the apple compote, heat the butter in a pan...",
+          "ingredients": [...],
+          "equipment": [...],
+          "length": { "number": 30, "unit": "minutes" }
+        },
+        ...
+      ]
+    }
+  ],
+  "spoonacularScore": 32.9125633239746,
+  "spoonacularSourceUrl": "https://spoonacular.com/traditional-apple-tart-663748"
+}
+`
                 }
             ]
         })
@@ -76,3 +129,4 @@ The JSON should follow this structure (no extra text, no markdown, no escape seq
 
     return response.json()
 }
+//generate instructions

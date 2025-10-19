@@ -1,3 +1,4 @@
+import { recipeModel } from '../../model/recipeModel.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -9,7 +10,10 @@ export async function findByIngredients(req, res) {
         const response = await fetch(url)
         const recipe = await response.json()
         const id = recipe[0]['id']
-        const finalRecipe = await searchById(id)
+        const rawRecipe = await searchById(id)
+
+        //return recipe model
+        const finalRecipe = recipeModel(rawRecipe, "spoonacular")
         res.json(finalRecipe)
     }
     catch {

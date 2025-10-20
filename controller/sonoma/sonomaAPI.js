@@ -47,6 +47,7 @@ The type will ALWAYS be 'gpt'
   "title": "All Day Simple Slow-Cooker FALL OFF the BONE Ribs",
   "prepTime": 45,
   "servings": 4,
+  "isFavorite": false,
   "imageUrl": "https://img.spoonacular.com/recipes/632075-556x370.jpg",
   "source": "https://www.foodista.com/recipe/WKSRCLNF/all-day-simple-slow-cooker-fall-off-the-bone-ribs",
   "ingredients": [
@@ -54,7 +55,8 @@ The type will ALWAYS be 'gpt'
     "0.25 Cup of broth",
     "40 oz of bbq sauce *i didn't need that much but it's what i had and didn't measure but it leaves extra",
     "4 servings of salt"
-  ]
+  ],
+  "description": "a short description about this recipe, 1 sentence maximum"
 }
 `
         }

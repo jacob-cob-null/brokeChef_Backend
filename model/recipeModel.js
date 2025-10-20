@@ -23,9 +23,11 @@ export function recipeModel(recipeObj, type) {
         "title": recipeObj["title"],
         "prepTime": recipeObj["readyInMinutes"],
         "servings": recipeObj["servings"],
+        "isFavorite": false,
         "imageUrl": recipeObj["image"],
         "source": recipeObj["sourceUrl"],
-        "ingredients": ingredients
+        "ingredients": ingredients,
+        "description": recipeObj["summary"].split('.')[0]
     }
 
     return newRecipe

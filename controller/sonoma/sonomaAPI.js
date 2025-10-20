@@ -14,7 +14,7 @@ export async function generateRecipe(req, res) {
     } catch (err) {
       return res.status(500).json({ error: "Invalid JSON returned from model", raw: recipeText })
     }
-
+    recipe.id = crypto.randomUUID()
     res.json(recipe)
   } catch (err) {
     console.error(err)
@@ -64,4 +64,3 @@ The type will ALWAYS be 'gpt'
 
   return response.json()
 }
-//generate instructions

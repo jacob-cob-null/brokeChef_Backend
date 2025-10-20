@@ -18,6 +18,7 @@ export function recipeModel(recipeObj, type) {
 
 
     const newRecipe = {
+        "id": crypto.randomUUID(),
         "type": type,
         "title": recipeObj["title"],
         "prepTime": recipeObj["readyInMinutes"],
